@@ -2,6 +2,7 @@
 
 # Demo for Selenium with nodejs
 ![Screenshot](images/selenium.png)
+
 Mocha is a feature-rich JavaScript testing framework that runs on Node.js and in the browser. It provides a simple and flexible way to write unit and integration tests for your application. Selenium, on the other hand, is a popular open-source testing framework for web applications. It allows you to automate web browsers and simulate user interactions.
 
 When combined, Mocha and Selenium can provide a powerful solution for testing web applications. Mocha allows you to write tests in a BDD or TDD style, while Selenium provides a way to interact with the web browser and simulate user actions. This combination enables you to test the functionality and user interface of your web application across different browsers and platforms.
