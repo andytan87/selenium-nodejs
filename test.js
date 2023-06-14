@@ -1,6 +1,6 @@
-const {Builder, Browser, By, Key, until} = require('selenium-webdriver');
-const util = require('util');
+const { Builder, Browser, By, Key, until } = require('selenium-webdriver');
 const fs = require('fs');
+
 
 url = "http://commerce-site-env.eba-22rrestm.us-east-1.elasticbeanstalk.com/"
 
@@ -46,7 +46,10 @@ describe('tests', () => {
 
                 try {
                     await driver.get(url);
+
                     await driver.findElement(By.className('cart-icon')).click();
+                    await driver.wait(until.elementLocated(By.xpath("//h3[contains(text(),'Your shopping bag is empty')]")), 5000);
+
                     const findItem = await driver.findElement(By.xpath("//h3[contains(text(),'Your shopping bag is empty')]")).getText();
 
                     assert.equal('Your shopping bag is empty', findItem);
@@ -69,13 +72,13 @@ describe('tests', () => {
                     await driver.get(url);
 
                     await driver.findElement(By.className('product-card')).click()
-                    await driver.sleep(1 * 1000)
+                    await driver.wait(until.elementLocated(By.className('add-to-cart')), 5000);
 
                     await driver.findElement(By.className('add-to-cart')).click();
-                    await driver.sleep(1 * 1000)
+                    await driver.wait(until.elementLocated(By.className('cart-icon')), 5000);
 
                     await driver.findElement(By.className('cart-icon')).click();
-                    await driver.sleep(1 * 1000)
+                    await driver.wait(until.elementLocated(By.xpath("//h5[contains(text(),'Speaker')]")), 5000);
 
                     const findItem = await driver.findElement(By.xpath("//h5[contains(text(),'Speaker')]")).getText();
 
