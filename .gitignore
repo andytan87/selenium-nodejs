@@ -1,5 +1,4 @@
 # Selenium and node
 node_modules/
-*.json
 *.env
 .DS_Store
